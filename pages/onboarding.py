@@ -78,6 +78,8 @@ class OnBoardingPage(tk.Frame):
 
         self.error_label.config(text="")
 
+        os.makedirs(os.path.dirname(USER_FILE_PATH), exist_ok=True)
+
         is_file_empty = (
             not os.path.exists(USER_FILE_PATH) or os.path.getsize(USER_FILE_PATH) == 0
         )
